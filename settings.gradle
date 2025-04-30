@@ -1,0 +1,5 @@
+rootProject.name = 'MSAPractice'
+
+include 'api-gateway'
+include 'order-service'
+include 'product-service'
