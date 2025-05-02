@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+# ?: /order/** ??? order-service? ???
+
+# Eureka ?? ???? ?? ???? uri? http://localhost:{??}? ?? ???? ?.
+  cloud:
+    gateway:
+      routes:
+        - id: order-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/order/**
+        - id: product-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/product/**
